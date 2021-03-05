@@ -1,4 +1,3 @@
-import surahs from '../../resources/quran-uthmani.json';
 import './SurahQuiz.css';
 
 type Surah = {
