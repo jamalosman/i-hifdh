@@ -2,7 +2,7 @@ import surahs from '../../resources/quran-uthmani.json';
 import './SurahList.css';
 
 function SurahList() {
-  let surahElements = surahs.map((x) => (
+  const surahElements = surahs.map((x) => (
     <li className='surah-list-item'>
       <a className='surah-link' href={`/surah/${x.index}`}>
         {x.index}. {x.name}
