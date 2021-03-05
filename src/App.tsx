@@ -1,15 +1,17 @@
 import React from 'react';
+import Home from './domain/Home/Home';
+import Surah from './domain/Surah/Surah';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import './App.css';
-import SurahList from './surah-list/SurahList';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>iHifdh</h1>
-      </header>
-      <SurahList/>
-    </div>
+    <Router>
+      <Switch>
+        <Route path='/' component={Home} exact />
+        <Route path='/surah/:id' component={Surah} exact />
+      </Switch>
+    </Router>
   );
 }
 
