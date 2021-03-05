@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <h1>iHifdh</h1>
       </header>
-      <SurahList></SurahList>
+      <SurahList/>
     </div>
   );
 }
