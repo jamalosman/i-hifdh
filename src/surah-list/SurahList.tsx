@@ -1,4 +1,4 @@
-import surahs from '../resources/quran-uthmani.json';
+import surahs from '../resources/surah-names.json';
 import './SurahList.css';
 
 function SurahList() {
