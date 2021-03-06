@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Quran-Arabic";
+    src:
+      url('../../assets/fonts/KFGQPC-Uthman-Taha-Naskh-Regular.ttf')
+      format("truetype");
+  }
+
+.quran-paragraph {
+    font-family:  'Quran-Arabic';
+    font-size: 36px;
+    text-align: center;
+}
