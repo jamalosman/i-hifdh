@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 const QuranPara = styled.p`
+  font-family: 'KFGQPC-Uthmani';
+  font-size: 36px;
+  text-align: center;
   padding: 10px 20px;
   margin: 20px;
   border-bottom: 5px solid black;
