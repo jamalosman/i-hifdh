@@ -19,7 +19,7 @@ type Ayah = {
 
 function SurahQuiz(props: any) {
   const surah: Surah = require(`../../resources/surahs/${props.id}.json`);
-  const ayas = surah.ayas.map((x) => <span>{x.text}</span>);
+  const ayas = surah.ayas.map((x) => <span key={`ayah-${x.index}`} >{x.text}</span>);
 
   return <QuranPara>{ayas}</QuranPara>;
 }
