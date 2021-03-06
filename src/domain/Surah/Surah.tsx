@@ -7,10 +7,10 @@ type ISurah = {
 };
 const Surah = ({ match }: RouteComponentProps<ISurah>) => {
   let id = match.params.id;
-  console.log(id);
+
   return (
     <div className=''>
-      <Header />
+      <Header url={id}/>
       <SurahQuiz id={id} />
     </div>
   );

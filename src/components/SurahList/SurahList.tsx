@@ -28,7 +28,7 @@ const SurahListItem = styled.div`
 `;
 
 function SurahList() {
-  const surahElements = surahs.map((x) => (
+  const surahElements = surahs.map((x, index) => (
     <SurahListItem>
       <SurahListATag as='a' href={`/surah/${x.index}`}>
         {x.index}. {x.name}

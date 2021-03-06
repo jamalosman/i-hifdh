@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { RouteComponentProps } from 'react-router-dom';
 const Title = styled.h1`
   color: white;
   text-decoration: none;
@@ -24,16 +24,20 @@ const HeaderCss = styled.div`
     display: block;
   }
 `;
-
-function Header() {
+type IHeader = { url?: string };
+const Header = (props: IHeader) => {
   return (
     <HeaderCss>
       <Title as='a' href='/'>
         iHifdh
       </Title>
-      <TextBacKToHome>Back to Home page</TextBacKToHome>
+      {props.url !== undefined ? (
+        <TextBacKToHome>Back to Home page</TextBacKToHome>
+      ) : (
+        ''
+      )}
     </HeaderCss>
   );
-}
+};
 
 export default Header;
