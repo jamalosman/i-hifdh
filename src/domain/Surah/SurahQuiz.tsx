@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 const QuranPara = styled.p`
+  font-family: 'KFGQPC-Uthmani';
+  font-size: 36px;
+  text-align: center;
   padding: 10px 20px;
   margin: 20px;
   border-bottom: 5px solid black;
@@ -19,7 +22,7 @@ type Ayah = {
 
 function SurahQuiz(props: any) {
   const surah: Surah = require(`../../resources/surahs/${props.id}.json`);
-  const ayas = surah.ayas.map((x) => <span>{x.text}</span>);
+  const ayas = surah.ayas.map((x) => <span key={`ayah-${x.index}`} >{x.text}</span>);
 
   return <QuranPara>{ayas}</QuranPara>;
 }

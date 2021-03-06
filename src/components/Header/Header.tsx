@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { RouteComponentProps } from 'react-router-dom';
 const Title = styled.h1`
   color: white;
   text-decoration: none;
@@ -8,35 +7,31 @@ const Title = styled.h1`
   padding: 2px 0px;
 `;
 
-const TextBacKToHome = styled.p`
+const Subtitle = styled.p`
   color: white;
   margin: 0px 0px 10px 0px;
   display: none;
 `;
 
-const HeaderCss = styled.div`
+const HeaderTag = styled.header`
   background-color: #282c34;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  &:hover ${TextBacKToHome} {
+  &:hover ${Subtitle} {
     display: block;
   }
 `;
 type IHeader = { url?: string };
 const Header = (props: IHeader) => {
   return (
-    <HeaderCss>
+    <HeaderTag>
       <Title as='a' href='/'>
         iHifdh
       </Title>
-      {props.url !== undefined ? (
-        <TextBacKToHome>Back to Home page</TextBacKToHome>
-      ) : (
-        ''
-      )}
-    </HeaderCss>
+      {props.url !== '/' &&  <Subtitle>Back to Home page</Subtitle>}
+    </HeaderTag>
   );
 };
 
