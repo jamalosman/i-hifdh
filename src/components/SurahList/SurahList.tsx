@@ -1,13 +1,13 @@
 import surahs from '../../resources/quran-uthmani.json';
 import styled from 'styled-components';
 
-const SurahListTitle = styled.div`
+const Title = styled.div`
   padding: 10px 20px;
   margin: 20px;
   border-bottom: 5px solid black;
 `;
 
-const SurahListATag = styled.a`
+const SurahLink = styled.a`
   padding: 10px;
   display: block;
   height: 100%;
@@ -20,26 +20,24 @@ const SurahListATag = styled.a`
   }
 `;
 
-const SurahListComp = styled.div``;
-
 const SurahListItem = styled.div`
   margin: 20px;
   padding: 0;
 `;
 
 function SurahList() {
-  const surahElements = surahs.map((x, index) => (
-    <SurahListItem>
-      <SurahListATag as='a' href={`/surah/${x.index}`}>
+  const surahElements = surahs.map((x, i) => (
+    <SurahListItem key={i.toString()} >
+      <SurahLink href={`/surah/${x.index}`}>
         {x.index}. {x.name}
-      </SurahListATag>
+      </SurahLink>
     </SurahListItem>
   ));
 
   return (
     <>
-      <SurahListTitle>Surahs</SurahListTitle>
-      <SurahListComp> {surahElements} </SurahListComp>
+      <Title>Surahs</Title>
+      <div> {surahElements} </div>
     </>
   );
 }
