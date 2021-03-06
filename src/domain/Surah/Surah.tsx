@@ -1,6 +1,6 @@
 import React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import SurahQuiz from '../../components/SurahQuiz/SurahQuiz';
+import SurahQuiz from './SurahQuiz';
 type ISurah = {
   id: string;
 };

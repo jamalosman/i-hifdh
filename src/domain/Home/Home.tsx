@@ -1,5 +1,5 @@
 import React from 'react';
-import SurahList from '../../components/SurahList/SurahList';
+import SurahList from './SurahList';
 import { RouteComponentProps } from 'react-router-dom';
 type IHome = {
   id: string;
