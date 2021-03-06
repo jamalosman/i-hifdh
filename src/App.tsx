@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './domain/Home/Home';
 import Surah from './domain/Surah/Surah';
 
-import './App.css';
-
 function App() {
   return (
     <Router>
