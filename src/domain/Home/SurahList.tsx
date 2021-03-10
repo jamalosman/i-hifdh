@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import {getSurahNames, SurahInfo} from '../../services/quranService/quranService';
 
@@ -33,11 +33,15 @@ const LoadingMessage = styled.h2`
 
 
 function SurahList() {
-  const [surahNames, setSurahNames] = useState(new Array<SurahInfo>());
-  getSurahNames().then(x => {setSurahNames(x)}, e => setSurahNames([]))
+  const [surahNames, setSurahNames] = useState<SurahInfo[] | null>(null);
+
+  useEffect(() => {
+    getSurahNames().then(x => {setSurahNames(x)}, e => setSurahNames([]))
+  });
+
   
   const getContent = () => {
-    if (surahNames?.length > 0)
+    if (surahNames && surahNames.length > 0)
     {
       return surahNames.map((x) => (
         <SurahListItem key={`surah-${x.index}`} >
