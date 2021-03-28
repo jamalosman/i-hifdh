@@ -15,10 +15,10 @@ export type Ayah = {
 }
 
 export const getSurahNames = () :Promise<SurahInfo[]> =>  {
-    // return Promise.resolve(require("../../resources/surah-names.json"))
-    return new Promise(resolve => setTimeout(() => resolve(require("../../resources/surah-names.json")), 200))
+    return Promise.resolve(require("../../resources/surah-names.json"))
+    // return new Promise(resolve => setTimeout(() => resolve(require("../../resources/surah-names.json")), 200))
 }
 export const getSurah = (index: number) :Promise<Surah> => { 
-    // return Promise.resolve(require(`../../resources/surahs/${index}.json`))
-    return new Promise(resolve => setTimeout(() => resolve(require(`../../resources/surahs/${index}.json`)), 200))
+    return Promise.resolve(require(`../../resources/surahs/${index}.json`))
+    // return new Promise(resolve => setTimeout(() => resolve(require(`../../resources/surahs/${index}.json`)), 200))
 }

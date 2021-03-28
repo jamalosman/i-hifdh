@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import {getSurahNames, SurahInfo} from '../../services/quranService/quranService';
+import { Context } from '../../store';
 
-const Title = styled.div`
+const Title = styled.h1`
   padding: 10px 20px;
   margin: 20px;
   border-bottom: 5px solid black;
@@ -34,10 +35,11 @@ const LoadingMessage = styled.h2`
 
 function SurahList() {
   const [surahNames, setSurahNames] = useState<SurahInfo[] | null>(null);
+  const [state, dispatch] = useContext(Context);
 
   useEffect(() => {
     getSurahNames().then(x => {setSurahNames(x)}, e => setSurahNames([]))
-  });
+  }, []);
 
   
   const getContent = () => {

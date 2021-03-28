@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { getSurah, Surah } from '../../services/quranService/quranService';
 
@@ -23,7 +23,9 @@ function SurahQuiz(props: any) {
   const [surah, setSurah] = useState<Surah | null>(null)
 
   // const surah: Surah = require(`../../resources/surahs/${props.id}.json`);
-  getSurah(props.id).then(x => setSurah(x));
+  useEffect(() => {
+    getSurah(props.id).then(x => setSurah(x));
+  }, []);
                           
 
   return surah ?

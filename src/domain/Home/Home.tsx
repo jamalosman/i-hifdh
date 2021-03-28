@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../../store';
+import QuizScoreTiles from './QuizScoreTiles';
 import SurahList from './SurahList';
-import { RouteComponentProps } from 'react-router-dom';
-type IHome = {
-  id: string;
-};
-const Home = ({ match }: RouteComponentProps<IHome>) => {
-  console.log(match.params);
+
+const Home = () => {
+
+  const [state, dispatch] = useContext(Context);
+
+
   return (
     <div className='App'>
+      <QuizScoreTiles scores={state.scores} />
       <SurahList />
     </div>
   );

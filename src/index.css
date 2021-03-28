@@ -18,3 +18,7 @@ code {
     url("assets/fonts/KFGQPC-Uthman-Taha-Naskh-Regular.ttf")
     format("truetype");
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
